@@ -1,0 +1,52 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-mongo
+{
+	"name": "Dtaap",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"mongodb.mongodb-vscode",
+				"ms-vscode-remote.remote-containers",
+				"ms-azuretools.vscode-docker",
+				"dsznajder.es7-react-js-snippets",
+				"xabikos.JavaScriptSnippets",
+				"ms-vsliveshare.vsliveshare",
+				"esbenp.prettier-vscode",
+				"ms-vscode-remote.remote-ssh",
+				"ms-vscode-remote.remote-ssh-edit",
+				"ms-vscode.remote-server",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"ms-vscode.remote-explorer",
+				"ms-vscode-remote.remote-wsl",
+				"jprestidge.theme-material-theme",
+				"PawelBorkar.jellyfish",
+				"PKief.material-icon-theme",
+				"CoenraadS.bracket-pair-colorizer"
+			]
+
+			// // Use 'forwardPorts' to make a list of ports inside the container available locally.
+			// "forwardPorts": [3000, 27017],
+
+			// // Use 'postCreateCommand' to run commands after the container is created.
+			// "postCreateCommand": "npm install"
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000, 27017],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "npm install",
+	"containerEnv": {"CHOKIDAR_USEPOLLING":"true"}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
